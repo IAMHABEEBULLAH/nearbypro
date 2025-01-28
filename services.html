@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - NearbyPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">NearbyPro</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+        <section class="services-section">
+            <h1>Our Services</h1>
+            <p>We provide a variety of essential services to meet your everyday needs, connecting you with trusted professionals in your community.</p>
+            
+            <div class="services-grid">
+                <!-- Service Cards -->
+                <div class="service-card">
+                    <img src="plumber.jpg" alt="Plumber" class="service-img">
+                    <h3>Plumber</h3>
+                    <p>Expert plumbers available for pipe repairs, leak fixing, and installations.</p>
+                    <button class="request-btn" onclick="openModal('Plumber')">Request Service</button>
+                </div>
+                <div class="service-card">
+                    <img src="electrician.jpg" alt="Electrician" class="service-img">
+                    <h3>Electricity</h3>
+                    <p>Qualified electricians for repairs, installations, and maintenance.</p>
+                    <button class="request-btn" onclick="openModal('Electrician')">Request Service</button>
+                </div>
+                <div class="service-card">
+                    <img src="tutor.jpg" alt="Tutors" class="service-img">
+                    <h3>Tutors</h3>
+                    <p>Skilled tutors for personalized lessons in various subjects and levels.</p>
+                    <button class="request-btn" onclick="openModal('Tutors')">Request Service</button>
+                </div>
+                <div class="service-card">
+                    <img src="chef.jpg" alt="Chefs" class="service-img">
+                    <h3>Chefs</h3>
+                    <p>Professional chefs for home-cooked meals, events, and culinary classes.</p>
+                    <button class="request-btn" onclick="openModal('Chefs')">Request Service</button>
+                </div>
+                <div class="service-card">
+                    <img src="event-planner.jpg" alt="Event Planner" class="service-img">
+                    <h3>Event Planners</h3>
+                    <p>Creative event planners to bring your celebrations to life.</p>
+                    <button class="request-btn" onclick="openModal('Event Planners')">Request Service</button>
+                </div>
+                <div class="service-card">
+                    <img src="waste.jpg" alt="Waste Management" class="service-img">
+                    <h3>Waste Management</h3>
+                    <p>Efficient waste disposal and management services for homes and offices.</p>
+                    <button class="request-btn" onclick="openModal('Waste Management')">Request Service</button>
+                </div>
+                <div class="service-card">
+                    <img src="carpenter.jpg" alt="Carpentry" class="service-img">
+                    <h3>Carpentry</h3>
+                    <p>Experienced carpenters for furniture repairs, installations, and custom designs.</p>
+                    <button class="request-btn" onclick="openModal('Carpentry')">Request Service</button>
+                </div>
+                <div class="service-card">
+                    <img src="painter.jpg" alt="Painter" class="service-img">
+                    <h3>Painters</h3>
+                    <p>Reliable painters for interior and exterior projects to beautify your space.</p>
+                    <button class="request-btn" onclick="openModal('Painters')">Request Service</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="serviceModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2>Request Service: <span id="serviceName"></span></h2>
+                <form id="requestForm">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="phone number">Your Email:</label>
+                    <input type="text" id="phonen" name="email" placeholder="phone number" required>
+                    <label for="details">Service Details:</label>
+                    <textarea id="details" name="details" placeholder="Describe your request..." rows="4" required></textarea>
+
+                    <button type="submit" class="primary-btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 NearbyPro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Open Modal
+        function openModal(service) {
+            document.getElementById('serviceModal').style.display = 'block';
+            document.getElementById('serviceName').textContent = service;
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+        }
+
+        // Handle Form Submission
+        document.getElementById('requestForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+            alert('Service request submitted successfully!');
+            closeModal(); // Close modal after submission
+        });
+    </script>
+</body>
+</html>
